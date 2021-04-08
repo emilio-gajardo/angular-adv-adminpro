@@ -6,14 +6,16 @@ import { DonaComponent } from './dona/dona.component';
 
 // Modulos de librerias externas
 import { ChartsModule } from 'ng2-charts';
+import { ModalImagenComponent } from './modal-imagen/modal-imagen.component';
 
 
 @NgModule({
-  declarations: [IncrementadorComponent, DonaComponent],
+  declarations: [IncrementadorComponent, DonaComponent, ModalImagenComponent],
 
   exports:[
     IncrementadorComponent,
-    DonaComponent
+    DonaComponent,
+    ModalImagenComponent
   ],
 
   imports: [

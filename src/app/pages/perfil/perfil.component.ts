@@ -33,8 +33,6 @@ export class PerfilComponent implements OnInit {
   }
 
 
-
-
   actualizarPerfil() {
     //console.log(this.perfilForm.value);
 
@@ -60,9 +58,6 @@ export class PerfilComponent implements OnInit {
         });
       });
   }
-
-
-
 
 
   cambiarImagen(file: File) {
@@ -93,7 +88,6 @@ export class PerfilComponent implements OnInit {
   }
 
 
-
   subirImagen() {
 
     this.fileUploadService
@@ -112,8 +106,7 @@ export class PerfilComponent implements OnInit {
         console.log(err);
         Swal.fire({ title: 'Error', text: 'No se pudo subir la imagen', icon: 'error' });
       });
-
   }
 
-
+  
 }

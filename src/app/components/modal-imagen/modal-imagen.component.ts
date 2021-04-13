@@ -67,9 +67,7 @@ export class ModalImagenComponent implements OnInit {
         Swal.fire({
           title: 'Bien',
           text: 'Imagen actualizada exitosamente',
-          icon: 'success',
-          timer: 2000,
-          showConfirmButton: false
+          icon: 'success'
         });
 
         this.modalImagenService.nuevaImagen.emit(img)

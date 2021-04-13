@@ -48,6 +48,7 @@ export class UsuariosComponent implements OnInit, OnDestroy{
 
   cargarUsuarios() {
     this.cargando = true;
+    
     this.usuarioService
       .cargarUsuarios(this.desde)
       .subscribe(({ total, usuarios }) => {
@@ -80,7 +81,7 @@ export class UsuariosComponent implements OnInit, OnDestroy{
     }
 
     this.busquedasServices.buscar('usuarios', termino)
-      .subscribe(resultados => {
+      .subscribe((resultados: Usuario[]) => {
         //console.log(resp)
         this.usuarios = resultados;
       });

@@ -5,30 +5,37 @@ import { Injectable } from '@angular/core';
 })
 export class SidebarService {
 
-  menu: any[] = [
-    {
-      titulo: 'My-Dashboard',
-      icono: 'mdi mdi-view-dashboard',
-      submenu: [
-        { titulo: 'Main', url: '/' },
-        { titulo: 'Gráficas', url: 'grafica1' },
-        { titulo: 'ProgressBar', url: 'progress' },
-        { titulo: 'Promesas', url: 'promesas' },
-        { titulo: 'Rxjs', url: 'rxjs' },
-      ]
-    },
+  // menu: any[] = [
+  //   {
+  //     titulo: 'My-Dashboard',
+  //     icono: 'mdi mdi-view-dashboard',
+  //     submenu: [
+  //       { titulo: 'Main', url: '/' },
+  //       { titulo: 'Gráficas', url: 'grafica1' },
+  //       { titulo: 'ProgressBar', url: 'progress' },
+  //       { titulo: 'Promesas', url: 'promesas' },
+  //       { titulo: 'Rxjs', url: 'rxjs' },
+  //     ]
+  //   },
 
 
-    {
-      titulo: 'Mantenimiento',
-      icono: 'mdi mdi-folder-lock-open',
-      submenu: [
-        { titulo: 'Usuarios', url: 'usuarios' },
-        { titulo: 'Hospitales', url: 'hospitales' },
-        { titulo: 'Médicos', url: 'medicos' },
-      ]
-    }
-  ];
+  //   {
+  //     titulo: 'Mantenimiento',
+  //     icono: 'mdi mdi-folder-lock-open',
+  //     submenu: [
+  //       { titulo: 'Usuarios', url: 'usuarios' },
+  //       { titulo: 'Hospitales', url: 'hospitales' },
+  //       { titulo: 'Médicos', url: 'medicos' },
+  //     ]
+  //   }
+  // ];
 
-  constructor() { }
+  public menu = [
+
+  ]
+
+  cargarMenu() {
+    this.menu = JSON.parse(localStorage.getItem('menu')) || [];
+  }
+
 }

@@ -12,6 +12,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { BusquedaComponent } from "src/app/pages/busqueda/busqueda.component";
+import { AdminGuard } from '../guards/admin.guard';
 
 // Mantenimientos
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
@@ -27,18 +29,21 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         children: [
             { path: '', component: DashboardComponent, data: { titulo: 'Dashboard' } },
-            { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' } },
-            { path: 'grafica1', component: Grafica1Component, data: { titulo: 'Grafica1' } },
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Account Settings' } },
+            { path: 'buscar/:termino', component: BusquedaComponent, data: {titulo: 'Busqueda'}},
+            { path: 'grafica1', component: Grafica1Component, data: { titulo: 'Grafica1' } },
+            { path: 'perfil', component: PerfilComponent, data: { titulo: 'Perfil' } },
+            { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' } },
             { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'Rxjs' } },
-            { path: 'perfil', component: PerfilComponent, data: { titulo: 'Perfil' } },
             
             // Mantenimientos
-            { path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Mantenimiento de Usuarios'}},
             { path: 'hospitales', component: HospitalesComponent, data: {titulo: 'Mantenimiento de Hospitales'}},
             { path: 'medicos', component: MedicosComponent, data: {titulo: 'Mantenimiento de Médicos'}},
             { path: 'medico/:id', component: MedicoComponent, data: {titulo: 'Mantenimiento de Médicos'}},
+
+            // RUTAS ADMIN
+            { path: 'usuarios', canActivate: [AdminGuard], component: UsuariosComponent, data: {titulo: 'Mantenimiento de Usuarios'}},
         ]
     },
 ];

@@ -1,0 +1,137 @@
+<div class="row animated fadeIn fast">
+    <h5 style="padding-left: 15px;">Termino buscado: <b>{{termino}}</b> </h5>
+</div>
+<br>
+
+
+<div class="row animated fadeIn fast">
+
+
+    <!-- inicio columna 1 usuarios -->
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+
+                <h3>Usuarios</h3>
+
+                <div class="alert alert-info" *ngIf="usuarios.length === 0">
+                    <p class="mb-0">Sin resultados</p>
+                </div>
+
+
+                <div class="table-responsive" *ngIf="usuarios.length > 0">
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let usuario of usuarios" class="animated fadeIn fast">
+                                <td>
+                                    <img class="w60" [src]="usuario.img | imagen:'usuarios'">
+                                </td>
+                                
+                                <td>{{usuario.nombre}}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fin columna 1 -->
+
+
+
+    <!-- inicio columna 2 medicos-->
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+
+                <h3>Médicos</h3>
+
+                <div class="alert alert-info" *ngIf="medicos.length === 0">
+                    <p class="mb-0">Sin resultados</p>
+                </div>
+
+
+                <div class="table-responsive" *ngIf="medicos.length > 0">
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let medico of medicos" 
+                                 class="animated fadeIn fast">
+                                <td>
+                                    <img class="w60" [src]="medico.img | imagen:'medicos'">
+                                </td>
+                                
+                                <td>
+                                    <a [routerLink]="['/dashboard/medico', medico._id]">
+                                        {{medico.nombre}}
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fin columna 2 -->
+
+
+
+
+    <!-- inicio columna 3 hospitales -->
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+
+                <h3>Hospitales</h3>
+
+                <div class="alert alert-info" *ngIf="hospitales.length === 0">
+                    <p class="mb-0">Sin resultados</p>
+                </div>
+
+
+                <div class="table-responsive" *ngIf="hospitales.length > 0">
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let hospital of hospitales" class="animated fadeIn fast">
+                                <td>
+                                    <img class="w60" [src]="hospital.img | imagen: 'hospitales'">
+                                </td>
+                                <td>{{hospital.nombre}}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fin columna 3 -->
+
+
+</div>

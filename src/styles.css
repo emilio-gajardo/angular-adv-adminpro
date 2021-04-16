@@ -26,6 +26,10 @@
     text-align: center;
 }
 
+.w60 {
+    width: 60px;
+}
+
 .w100 {
     width: 100px;
 }
